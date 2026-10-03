@@ -1,0 +1,41 @@
+/**
+ * Morn Form Guard 后台样式。
+ */
+
+.morn-fg-toolbar {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 8px;
+	margin: 12px 0 20px;
+	padding: 12px 16px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+}
+
+.morn-fg-count {
+	margin-right: auto;
+	font-weight: 600;
+	color: #1d2327;
+}
+
+.morn-fg-log {
+	margin-bottom: 24px;
+	max-width: 720px;
+}
+
+.morn-fg-log code {
+	font-size: 12px;
+}
+
+.morn-fg-read {
+	color: #00a32a;
+	font-weight: 600;
+}
+
+.morn-fg-wrap textarea.code {
+	font-family: Consolas, Monaco, monospace;
+	font-size: 13px;
+	line-height: 1.6;
+}

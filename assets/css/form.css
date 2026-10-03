@@ -1,0 +1,209 @@
+/**
+ * Morn Form Guard 前台表单样式。
+ *
+ * 使用 CSS 自定义属性适配主题配色，变量可被主题覆盖。
+ */
+
+.morn-form-wrap {
+	--morn-fg-border: #dcdcde;
+	--morn-fg-text: #1d2327;
+	--morn-fg-muted: #646970;
+	--morn-fg-accent: #2271b1;
+	--morn-fg-error: #d63638;
+	--morn-fg-success: #00a32a;
+	--morn-fg-bg: #fff;
+	--morn-fg-radius: 4px;
+
+	margin: 0 0 2em;
+	color: var(--morn-fg-text);
+}
+
+.morn-form-title {
+	margin: 0 0 1em;
+	font-size: 1.3em;
+	line-height: 1.3;
+}
+
+.morn-field {
+	margin-bottom: 1em;
+}
+
+.morn-field label {
+	display: block;
+	margin-bottom: 6px;
+	font-weight: 600;
+	font-size: 0.92em;
+}
+
+.morn-required {
+	color: var(--morn-fg-error);
+	margin-left: 2px;
+}
+
+.morn-input {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 12px;
+	font-size: 1em;
+	font-family: inherit;
+	line-height: 1.5;
+	color: var(--morn-fg-text);
+	background: var(--morn-fg-bg);
+	border: 1px solid var(--morn-fg-border);
+	border-radius: var(--morn-fg-radius);
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.morn-input:focus {
+	outline: none;
+	border-color: var(--morn-fg-accent);
+	box-shadow: 0 0 0 1px var(--morn-fg-accent);
+}
+
+.morn-input.has-error {
+	border-color: var(--morn-fg-error);
+}
+
+textarea.morn-input {
+	min-height: 120px;
+	resize: vertical;
+}
+
+/* 两列布局。 */
+.morn-form[data-layout="two-column"] {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 0 16px;
+}
+
+.morn-form[data-layout="two-column"] .morn-field,
+.morn-form[data-layout="two-column"] .morn-submit-row,
+.morn-form[data-layout="two-column"] .morn-response,
+.morn-form[data-layout="two-column"] .morn-custom-fields,
+.morn-form[data-layout="two-column"] .morn-hp {
+	grid-column: 1 / -1;
+}
+
+.morn-form[data-layout="two-column"] .morn-field-half {
+	grid-column: span 1;
+}
+
+@media (max-width: 600px) {
+	.morn-form[data-layout="two-column"] .morn-field-half {
+		grid-column: 1 / -1;
+	}
+}
+
+/* 蜜罐字段：视觉隐藏但可被脚本填充。 */
+.morn-hp {
+	position: absolute !important;
+	left: -9999px !important;
+	width: 1px;
+	height: 1px;
+	overflow: hidden;
+}
+
+.morn-captcha-row {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.morn-captcha-question {
+	flex: 0 0 auto;
+	padding: 8px 12px;
+	font-weight: 600;
+	font-variant-numeric: tabular-nums;
+	background: #f6f7f7;
+	border: 1px solid var(--morn-fg-border);
+	border-radius: var(--morn-fg-radius);
+}
+
+.morn-custom-title {
+	margin: 1.5em 0 0.8em;
+	padding-top: 1em;
+	border-top: 1px solid var(--morn-fg-border);
+	font-size: 1em;
+}
+
+.morn-submit-row {
+	margin-top: 1.2em;
+}
+
+.morn-submit {
+	display: inline-block;
+	padding: 11px 26px;
+	font-size: 1em;
+	font-family: inherit;
+	font-weight: 600;
+	line-height: 1.4;
+	color: #fff;
+	background: var(--morn-fg-accent);
+	border: none;
+	border-radius: var(--morn-fg-radius);
+	cursor: pointer;
+	transition: opacity 0.15s ease, transform 0.05s ease;
+}
+
+.morn-submit:hover {
+	opacity: 0.9;
+}
+
+.morn-submit:active {
+	transform: translateY(1px);
+}
+
+.morn-submit[disabled] {
+	opacity: 0.6;
+	cursor: not-allowed;
+}
+
+.morn-field-error {
+	margin: 6px 0 0;
+	font-size: 0.85em;
+	color: var(--morn-fg-error);
+}
+
+.morn-response:empty {
+	display: none;
+}
+
+.morn-response {
+	margin-top: 1em;
+	padding: 12px 14px;
+	border-radius: var(--morn-fg-radius);
+	font-size: 0.95em;
+}
+
+.morn-response.is-success {
+	color: var(--morn-fg-success);
+	background: #edfaef;
+	border: 1px solid #a7e0b5;
+}
+
+.morn-response.is-error {
+	color: var(--morn-fg-error);
+	background: #fcf0f1;
+	border: 1px solid #f0b8bb;
+}
+
+.morn-form-notice {
+	margin: 0 0 1.2em;
+	padding: 12px 14px;
+	border-radius: var(--morn-fg-radius);
+	font-size: 0.95em;
+}
+
+.morn-form-notice-ok {
+	color: var(--morn-fg-success);
+	background: #edfaef;
+	border: 1px solid #a7e0b5;
+}
+
+.morn-form-notice-error,
+.morn-form-notice-expired {
+	color: var(--morn-fg-error);
+	background: #fcf0f1;
+	border: 1px solid #f0b8bb;
+}
