@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name: Morn Form Guard
- * Plugin URI: https://github.com/mornrain/morn-form-guard
+ * Plugin URI: https://github.com/mornrain-lin/morn-form-guard
  * Description: 纯前端短代码联系表单，自带安全防护体系。含 nonce + 时间戳校验、Honeypot 蜜罐、IP 提交频率限制、IP 黑名单、关键词黑名单、Math Captcha 算术题、链接数量检测，存储为自定义文章类型并支持后台查看与 CSV 导出。零外部资源。
  * Version: 1.0.0
  * Requires at least: 6.0
  * Requires PHP: 7.4
  * Tested up to: 6.6
  * Author: MornRain
- * Author URI: https://github.com/mornrain
+ * Author URI: https://github.com/mornrain-lin
  * License: MIT
  * License URI: https://opensource.org/licenses/MIT
  * Text Domain: morn-form-guard
